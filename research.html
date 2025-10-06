@@ -23,6 +23,29 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        
+        .project-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .project-details.show {
+            max-height: 1000px;
+            transition: max-height 0.3s ease-in;
+        }
+        
+        .project-card {
+            cursor: pointer;
+        }
+        
+        .expand-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .expand-icon.rotated {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -66,150 +89,269 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Project 1 -->
-            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div>
-                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-3">Ongoing</span>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Parcel Delivery Demand Analysis</h2>
-                        <p class="text-gray-600">2023 - Present</p>
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6 border-l-4 border-blue-500 hover:shadow-lg transition-shadow">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">Ongoing</span>
+                            <span class="text-sm text-gray-500">May 2024 - Dec 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Smart Advanced Logistics in Yongsan International Business District</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">Korean Railroad Corporation</p>
                     </div>
                 </div>
-                <div class="prose max-w-none">
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Overview</h3>
+                <div class="mt-4 pt-4 border-t border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        This research focuses on analyzing demand patterns in parcel delivery systems using large-scale 
-                        data analysis techniques. The goal is to improve forecasting accuracy and optimize resource 
-                        allocation in last-mile delivery operations.
+                        Feasibility study and basic planning for implementing smart advanced logistics infrastructure in Yongsan International Business District Urban Development Project.
                     </p>
-                    
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Research Objectives</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
-                        <li>Develop accurate demand forecasting models for parcel delivery</li>
-                        <li>Identify spatial and temporal patterns in delivery demand</li>
-                        <li>Optimize resource allocation based on demand predictions</li>
-                        <li>Improve operational efficiency in last-mile logistics</li>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Activities</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Forecasted parcel delivery demand</li>
+                        <li>Analyzed traffic impacts using queuing theory</li>
+                        <li>Developed basic implementation plans for smart logistics infrastructure</li>
                     </ul>
-
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Methodology</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Utilizing big data analytics, machine learning algorithms, and statistical modeling 
-                        to process and analyze large-scale delivery data. The research employs time series 
-                        analysis and spatial statistics to capture demand patterns.
-                    </p>
-
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Expected Impact</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        The findings will contribute to more efficient logistics operations, reduced delivery costs, 
-                        and improved service quality in the parcel delivery industry.
-                    </p>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div>
-                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full mb-3">Ongoing</span>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Supply Chain Optimization</h2>
-                        <p class="text-gray-600">2022 - Present</p>
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 paper-card" onclick="toggleProject('project2')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full mb-3">Completed</span>
+                            <span class="text-sm text-gray-500">Jul 2024 - Feb 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Improvement of Support Measures for New Logistics Technologies</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">Korea Agency for Infrastructure Technology Advancement (KAIA)</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
                     </div>
                 </div>
-                <div class="prose max-w-none">
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Overview</h3>
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project2">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        Development of optimization models for supply chain networks with dual focus on efficiency 
-                        and fairness. This research includes destination allocation models that balance route-income 
-                        fairness with operational efficiency.
+                        Research focused on enhancing support measures for new logistics technologies and improving operational efficiency.
                     </p>
-                    
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Research Objectives</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
-                        <li>Design fair and efficient destination allocation mechanisms</li>
-                        <li>Balance multiple objectives in supply chain optimization</li>
-                        <li>Develop mathematical models for route optimization</li>
-                        <li>Consider both economic efficiency and social fairness</li>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Key Activities</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Conducted policy analysis</li>
+                        <li>Collected and analyzed patent data</li>
+                        <li>Informed technology development strategies</li>
                     </ul>
-
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Key Contributions</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        This research introduces novel approaches to incorporate fairness considerations into 
-                        traditional optimization frameworks, addressing the growing need for equitable solutions 
-                        in logistics operations.
-                    </p>
-
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Applications</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        The developed models can be applied to various logistics scenarios including parcel 
-                        delivery networks, freight transportation, and distribution systems.
-                    </p>
                 </div>
             </div>
 
             <!-- Project 3 -->
-            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div>
-                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full mb-3">Ongoing</span>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Fair Labor Allocation in Logistics</h2>
-                        <p class="text-gray-600">2023 - Present</p>
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 project-card" onclick="toggleProject('project3')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">Completed</span>
+                            <span class="text-sm text-gray-500">Apr 2024 - Feb 2025</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Digital Logistics Services Demonstration Project</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">Incheon Metropolitan City</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
                     </div>
                 </div>
-                <div class="prose max-w-none">
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Overview</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Investigation of fair labor allocation mechanisms in parcel delivery networks. This research 
-                        addresses the critical balance between operational efficiency and equitable distribution 
-                        of workload and income among delivery workers.
-                    </p>
-                    
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Research Questions</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
-                        <li>How to fairly distribute delivery routes among workers?</li>
-                        <li>What metrics define fairness in labor allocation?</li>
-                        <li>How to balance fairness with operational efficiency?</li>
-                        <li>What are the impacts of fair allocation on worker satisfaction?</li>
-                    </ul>
-
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Approach</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Combining operations research methodologies with fairness principles from economics and 
-                        social sciences to develop allocation mechanisms that satisfy both efficiency and equity 
-                        requirements.
-                    </p>
-
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Societal Impact</h3>
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project3">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        This research contributes to improving working conditions in the gig economy and 
-                        platform-based delivery services by promoting fair treatment of delivery workers 
-                        while maintaining service quality.
+                        Demonstration project for demand-responsive smart loading management system aimed at reducing social disparities. Coordinated research activities with partner institutions and contributed to the design/implementation of contingent valuation method (CVM) and satisfaction survey.
                     </p>
                 </div>
             </div>
 
-            <!-- Project 4 - Add more projects as needed -->
-            <div class="bg-white rounded-lg shadow-md p-8 mb-8">
-                <div class="flex items-start justify-between mb-4">
-                    <div>
-                        <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full mb-3">Future Work</span>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Transportation Network Optimization</h2>
-                        <p class="text-gray-600">Planned</p>
+            <!-- Project 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 project-card" onclick="toggleProject('project4')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">Completed</span>
+                            <span class="text-sm text-gray-500">Sep 2024 - Nov 2024</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Minimizing On-Road Automobile Emissions Logic Development</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">National Institute of Environmental Research</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
                     </div>
                 </div>
-                <div class="prose max-w-none">
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Overview</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Future research direction focusing on optimizing transportation networks for improved 
-                        efficiency and sustainability. This project will explore network design, route planning, 
-                        and resource allocation in complex transportation systems.
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Developed logic to minimize on-road automobile emissions and greenhouse gas emissions. Reviewed domestic and international emission estimation methods and compared results across methodologies.
                     </p>
-                    
-                    <h3 class="text-lg font-semibold text-gray-900 mt-6 mb-3">Planned Objectives</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
-                        <li>Design efficient transportation network structures</li>
-                        <li>Optimize multi-modal transportation systems</li>
-                        <li>Reduce carbon footprint in logistics operations</li>
-                        <li>Improve overall network resilience and flexibility</li>
-                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 project-card" onclick="toggleProject('project5')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">Completed</span>
+                            <span class="text-sm text-gray-500">Sep 2024 - Nov 2024</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Carbon Emission Estimation Methods Review and Application</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">Korea Transport Institute (KOTI)</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project5">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Conducted literature review and evaluated applicability of carbon emission estimation methodologies for the transport sector, comparing domestic and international approaches.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 project-card" onclick="toggleProject('project6')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">Completed</span>
+                            <span class="text-sm text-gray-500">Mar 2022 - Nov 2024</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Data-driven Model Optimization for Hydrogen Supply Chain/Logistics</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">Korea Institute of Civil Engineering and Building Technology (KICT)</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Developed data-driven optimization models for hydrogen supply chain and logistics management. Collected and analyzed data, drafted research reports, and conducted model coding and simulation experiments.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 project-card" onclick="toggleProject('project7')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">Completed</span>
+                            <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full">Project Manager</span>
+                            <span class="text-sm text-gray-500">Jun 2023 - Jan 2024</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Logistics System Testbed Using Robots</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">Inha University</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project7">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Project Manager for establishing and validating a logistics center AGV test-bed using LEGO robots. Demonstrated automated material handling and warehouse management system integration.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 project-card" onclick="toggleProject('project8')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">Completed</span>
+                            <span class="text-sm text-gray-500">Dec 2022 - Jun 2023</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Logistics Big Data Establishment and Applications for Road Freight</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">Korea Transport Institute (KOTI)</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Established and applied logistics big data focusing on the road freight transportation industry. Designed surveys, analyzed demand data, conducted quantitative analysis of freight rates, and drafted research reports.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 project-card" onclick="toggleProject('project9')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">Completed</span>
+                            <span class="text-sm text-gray-500">Mar 2022 - Feb 2023</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Efficient and Fair Last-Mile Delivery Zone Design</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">Inha University</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project9">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Research on efficient and fair last-mile delivery zone design. Conducted modeling and programming to optimize delivery territory allocation while considering fairness principles.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 10 -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4 project-card" onclick="toggleProject('project10')">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">Completed</span>
+                            <span class="text-sm text-gray-500">Jan 2022 - Dec 2022</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-2">Urban Railway-Based Lifestyle Logistics Services Revitalization</h2>
+                        <p class="text-sm text-gray-600 italic mb-3">JUNGSEOK LOGISTICS FOUNDATION</p>
+                        <div class="flex items-center text-blue-600 text-sm font-medium">
+                            <span>Click to view details</span>
+                            <svg class="w-4 h-4 ml-2 expand-icon" id="icon-project10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details mt-4 pt-4 border-t border-gray-200" id="details-project10">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Research on revitalization plans for lifestyle logistics services based on urban railways. Collected and analyzed freight volume data, and analyzed user willingness to use urban railway-based logistics services.
+                    </p>
                 </div>
             </div>
 
@@ -234,7 +376,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <p>&copy; 2025 HanByul Ryu. All rights reserved.</p>
-                <p class="mt-2 text-sm">Last updated: January 2025</p>
+                <p class="mt-2 text-sm">Last updated: October 2025</p>
             </div>
         </div>
     </footer>
@@ -253,6 +395,20 @@
                 }
             });
         });
+
+        // Toggle Project Details
+        function toggleProject(projectId) {
+            const details = document.getElementById(`details-${projectId}`);
+            const icon = document.getElementById(`icon-${projectId}`);
+            
+            if (details.classList.contains('show')) {
+                details.classList.remove('show');
+                icon.classList.remove('rotated');
+            } else {
+                details.classList.add('show');
+                icon.classList.add('rotated');
+            }
+        }
     </script>
 </body>
 </html>
