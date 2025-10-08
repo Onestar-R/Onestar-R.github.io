@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - HanByul Ryu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#64748b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom Tooltip */
+        .tooltip-wrapper {
+            position: relative;
+            display: inline-flex;
+        }
+        
+        .tooltip-wrapper .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            background-color: rgba(31, 41, 55, 0.95);
+            color: #fff;
+            text-align: center;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            
+            /* Position */
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            /* Arrow */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: opacity 0.1s, visibility 0.1s;
+        }
+        
+        .tooltip-wrapper .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(31, 41, 55, 0.95) transparent transparent transparent;
+        }
+        
+        .tooltip-wrapper:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 fixed w-full top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-semibold text-gray-900">HanByul Ryu</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="index.html#about" class="text-primary px-3 py-2 text-sm font-medium transition">About</a>
+                        <a href="research.html" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition">Research Projects</a>
+                        <a href="publications.html" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition">Publications</a>
+                        <a href="index.html#contact" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-medium transition">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-4">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6">About</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Learn more about HanByul Ryu's background, education, and research focus.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 items-start">
+                <!-- Profile Image -->
+                <div class="md:col-span-1">
+                    <div class="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 text-center">
+                        <img src="./image/main (1).JPG" alt="HanByul Ryu" class="w-48 h-48 object-cover object-right rounded-full mx-auto mb-6 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">HanByul Ryu</h3>
+                        <p class="text-gray-600 mb-4">Ph.D. Candidate</p>
+                        <p class="text-sm text-gray-500">Graduate School of Logistics<br>Inha University</p>
+                    </div>
+                </div>
+
+                <!-- Biography -->
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Biography</h2>
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p>
+                            Hanbyul Ryu is currently a Ph.D. student at Graduate School of Logistics at Inha University, 
+                            focusing on Digital and Urban Logistics, Data Analytics in Supply Chain Management, and Network Optimization.
+                        </p>
+                        <p>
+                            Her primary research interest lies in practical optimization models that incorporate individual behaviors, 
+                            environmental considerations, and real-world constraints such as human factors. 
+                            To this end, she examines personal preferences, utility functions, and environmental costs, 
+                            integrating them into optimization frameworks to better capture decision-making processes in logistics systems.
+                        </p>
+                        <p>
+                            Her recent research analyzes parcel delivery demand patterns and evaluates 
+                            the impacts of service operations using queuing-based simulation models, 
+                            applying data-driven analytical approaches to enhance supply chain efficiency and logistics performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">Education</h2>
+            <div class="space-y-8">
+                <!-- Ph.D. -->
+                <div class="bg-white rounded-lg shadow-md p-8 border-l-4 border-blue-600">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Ph.D. Candidate in Logistics</h3>
+                            <p class="text-gray-600 mt-1">Graduate School of Logistics, Inha University, Incheon, South Korea</p>
+                        </div>
+                        <span class="text-sm font-medium text-blue-600">Feb. 2023 - Present</span>
+                    </div>
+                    <p class="text-gray-700">
+                        Focus: Digital Logistics, Supply Chain Optimization, Network Analysis
+                    </p>
+                </div>
+
+                <!-- Master's -->
+                <div class="bg-white rounded-lg shadow-md p-8 ">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Master of Science in Logistics</h3>
+                            <p class="text-gray-600 mt-1">Graduate School of Logistics, Inha University, Incheon, South Korea</p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">Feb. 2023</span>
+                    </div>
+                    <div class="text-gray-700 space-y-2">
+                        <p class="italic">
+                            <span class="font-medium">Thesis:</span> Destination Allocation Model Considering Route-income Fairness and Efficiency
+                        </p>
+                        <div class="inline-flex items-center px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            Highest Academic Achievement Award
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bachelor's -->
+                <div class="bg-white rounded-lg shadow-md p-8 ">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Bachelor of Logistics</h3>
+                            <p class="text-gray-600 mt-1">Asia Pacific School of Logistics, Inha University, Incheon, South Korea</p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">Feb. 2021</span>
+                    </div>
+                    <div class="text-gray-700">
+                        <p><span class="font-medium">Major:</span> Logistics</p>
+                        <p><span class="font-medium">Interdisciplinary:</span> Software Convergence Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiences Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">Experiences</h2>
+            <div class="space-y-6">
+                <!-- Research: Visiting Student -->
+                <div class="bg-white rounded-lg shadow-md p-8"><!--</div> border-l-4 border-blue-600">-->
+                    <div class="mb-3">
+                        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">RESEARCH</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Visiting Student</h3>
+                            <p class="text-gray-600 mt-1">University of California, Irvine (UCI), United States</p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">Dec. 2021 - Feb. 2022</span>
+                    </div>
+                    <div class="text-gray-700 space-y-3">
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Involved in Professor R. Jayakrishnan Project 
+                                    <br> Title: <span class="italic"> A Smart Mobility Platform with Fair Congestion Pricing and Efficiently Distributed Incentives to Equitably Reduce VMT</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Audited a class, Transportation Networks. I</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teaching: Lecturer -->
+                <div class="bg-white rounded-lg shadow-md p-8"><!--</div> border-l-4 border-green-600">-->
+                    <div class="mb-3">
+                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold">TEACHING</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-full">
+                            <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Lecturer</h3>
+                                    <p class="text-gray-600 mt-1"><span class="text-gray-500">Inha University, Incheon, South Korea</span></p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">Fall 2024</span>
+                    </div>
+                            <div class="text-gray-700 space-y-2 mb-4">
+                                <ul class="list-none space-y-2">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Introduction to Computer Programming</span>
+                                    </li>
+                                </ul>
+                </div>
+
+                            <div class="flex justify-between items-start mb-3 pt-4 border-t border-gray-200">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Lecturer</h3>
+                                    <p class="text-gray-600 mt-1"><span class="text-gray-500">Incheon National University, Incheon, South Korea</span></p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">Spring 2024</span>
+                            </div>
+                            <div class="text-gray-700 space-y-2">
+                                <ul class="list-none space-y-2">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Urban Data Mining</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching: TA -->
+                <div class="bg-white rounded-lg shadow-md p-8"><!--</div> border-l-4 border-green-600">-->
+                    <div class="mb-3">
+                        <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold">TEACHING</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Teaching Assistant</h3>
+                            <p class="text-gray-600 mt-1"><span class="text-gray-500">Inha University, Incheon, South Korea</span></p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">2021 - 2023</span>
+                    </div>
+                    <div class="text-gray-700 space-y-3">
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Introduction to Computer Programming (Fall 2023, Fall 2022, Fall 2021)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Mathematics for Logistics (Spring 2022)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>AI Programming in Logistics (Spring 2022)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Extracurricular: Tutoring -->
+                <div class="bg-white rounded-lg shadow-md p-8"><!--</div> border-l-4 border-purple-600">-->
+                    <div class="mb-3">
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-semibold">EXTRACURRICULAR</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Inha Tutoring Program</h3>
+                            <p class="text-gray-600 mt-1"><span class="text-gray-500">Inha University, Incheon, South Korea</span></p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">Fall 2023</span>
+                        </div>
+                    <div class="text-gray-700 space-y-3">
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Assisted master's degree students in the Smart Freight Mobility course and provided guidance on research paper development</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Extracurricular: Resident Assistant -->
+                <div class="bg-white rounded-lg shadow-md p-8"><!--</div> border-l-4 border-purple-600">-->
+                    <div class="mb-3">
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-semibold">EXTRACURRICULAR</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Resident Assistant</h3>
+                            <p class="text-gray-600 mt-1"><span class="text-gray-500">Inha University, Incheon, South Korea</span></p>
+                        </div>
+                        <span class="text-sm font-medium text-gray-500">Feb. 2021 - Jan. 2023</span>
+                        </div>
+                    <div class="text-gray-700 space-y-3">
+                        <ul class="list-none space-y-2">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Assisted international students with problem solving in English and performed administrative responsibilities for the dormitory twice a week</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Extracurricular: Club Association -->
+                <div class="bg-white rounded-lg shadow-md p-8"><!--</div> border-l-4 border-purple-600">-->
+                    <div class="mb-3">
+                        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-semibold">EXTRACURRICULAR</span>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="w-full">
+                            <div class="flex justify-between items-start mb-3">
+                                <div>
+                                    <h3 class="text-xl font-bold text-gray-900">President</h3>
+                                    <p class="text-gray-600 mt-1"><span class="text-gray-500">Inha University Club Association, Incheon, South Korea</span></p>
+                                </div>
+                                <span class="text-sm font-medium text-gray-500">Jan. 2018 - Dec. 2018</span>
+                            </div>
+                            <div class="text-gray-700 space-y-2 mb-4">
+                                <ul class="list-none space-y-2">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Led the university-wide club association, coordinating activities among student organizations and representing their interests to the administration</span>
+                                    </li>
+                                </ul>
+                    </div>
+                            
+                            <div class="flex justify-between items-start mb-3 pt-4 border-t border-gray-200">
+                        <div>
+                                    <h3 class="text-xl font-bold text-gray-900">Member</h3>
+                                    <p class="text-gray-600 mt-1"><span class="text-gray-500">Inha University Club Association, Incheon, South Korea</span></p>
+                                </div>
+                                <span class="text-sm font-medium text-gray-500">Aug. 2016 - Dec. 2017</span>
+                            </div>
+                            <div class="text-gray-700 space-y-2">
+                                <ul class="list-none space-y-2">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>Planned and managed projects and events for student clubs across the university</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards and Honors Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">Awards and Honors</h2>
+            
+            <!-- Paper Awards -->
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+                    <svg class="w-6 h-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    Conference and Paper Awards
+                </h3>
+                <div class="space-y-4">
+                    <!-- 2025 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Outstanding Paper Award</h4>
+                            <span class="text-sm font-medium text-gray-500">Mar. 2025</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Korean Society of Transportation Policy and Economics</span></p>
+                        <p class="text-gray-700 text-sm">Analysis of Time Series Characteristics of Urban Logistics Demand According to Spatial Unit Changes: Focus on Seoul's Origin-Destination Freight Volume</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Outstanding Paper Award</h4>
+                            <span class="text-sm font-medium text-gray-500">Nov. 2024</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">The Korea Logistics Research Association</span></p>
+                        <p class="text-gray-700 text-sm">Comparative Analysis of Confidence Interval Estimation Models for Parcel Delivery Demand: Addressing Uncertainties in Demand</p>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 flex items-center">
+                                Honorable Mention Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Mar. 2024</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Korean Society of Transportation Policy and Economics</span></p>
+                        <p class="text-gray-700 text-sm">Development of a Regional Electric Vehicle Adoption Growth Prediction Model for Evaluating and Planning Future Electric Vehicle Charging Infrastructure Deployment Levels</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Honorable Mention Award</h4>
+                            <span class="text-sm font-medium text-gray-500">Mar. 2024</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Korean Society of Transportation Policy and Economics</span></p>
+                        <p class="text-gray-700 text-sm">Analysis of Satisfaction/Dissatisfaction Factors for Digital Shared Logistics Services for Small Business Owners</p>
+                    </div>
+
+                    <!-- 2023 -->
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 flex items-center">
+                                Best Paper Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                                <span class="inline-flex items-center px-1 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold ml-2">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Nov. 2023</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">The Korean Society of Intelligent Transportation Systems</span></p>
+                        <p class="text-gray-700 text-sm">A Study on the Accessibility Assessment of Hydrogen Vehicle Charging Infrastructure: A Case Study of Ulsan City</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">
+                                Outstanding Paper Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Nov. 2023</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">The Society of Logistics Science and Technology</span></p>
+                        <p class="text-gray-700 text-sm">Analysis of Electric Vehicle Demand Characteristics for Establishing Highway Electric Vehicle Charging Station Deployment Strategy</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 flex items-center">
+                                Best Paper Award
+                                <span class="inline-flex items-center px-1 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold ml-2">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Sep. 2023</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Korean Society of Transportation Policy and Economics</span></p>
+                        <p class="text-gray-700 text-sm">The Determinants of Cargo Rates Utilizing Big Data from a Digital Freight Carrier Platform</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">
+                                Honorable Mention Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Sep. 2023</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Korean Society of Transportation Policy and Economics</span></p>
+                        <p class="text-gray-700 text-sm">Analysis of Hydrogen Supply Chain Trends through Semantic Network Analysis</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 flex items-center">
+                                Best Paper Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                                <span class="inline-flex items-center px-1 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold ml-2">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">May. 2023</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Korea Logistics Society</span></p>
+                        <p class="text-gray-700 text-sm">A Marginal Effects Approach of Railway-based Urban Logistics Services</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Outstanding Paper Award</h4>
+                            <span class="text-sm font-medium text-gray-500">Dec. 2022</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="font-semibold text-gray-700">Paper Competition</span>, <span class="italic">The Korea Logistics Research Association</span></p>
+                        <p class="text-gray-700 text-sm">Market analysis of container ships considering supply chain risks: Ocean freight rate forecast using panel data</p>
+                    </div>
+
+                    <!-- 2022 -->
+                        <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 flex items-center">
+                                Best Paper Award
+                                <span class="inline-flex items-center px-1 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold ml-2">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Nov. 2022</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="font-semibold text-gray-700">Paper Competition</span>, <span class="italic">The Korean Production and Operations Management Society</span></p>
+                        <p class="text-gray-700 text-sm">Risks in Parts Supply Chain and Their Impact on Supply Chains and Shipping Sector: Focusing on Automobile Industry</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 flex items-center">
+                                Bronze Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                                <span class="inline-flex items-center px-1 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold ml-2">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Sep. 2022</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="font-semibold text-gray-700">Data Analysis Competition</span>, <span class="italic">Kakao Mobility</span></p>
+                        <p class="text-gray-700 text-sm">Kakao Mobility Data Contest: Parking Lot Occupancy Prediction Problem</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">
+                                Outstanding Paper Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">May. 2022</span>
+                    </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Korea Logistics Society</span></p>
+                        <p class="text-gray-700 text-sm">Analysis of Factors Affecting Preference of Urban Railway based Logistics Services</p>
+                </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 flex items-center">
+                                Grand Prize
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                                <span class="inline-flex items-center px-1 py-1 bg-yellow-100 text-yellow-500 rounded-full text-xs font-semibold ml-2">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Apr. 2022</span>
+                    </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="font-semibold text-gray-700">Paper Competition</span>, <span class="italic">The Korean Society of Supply Chain Management</span></p>
+                        <p class="text-gray-700 text-sm">Optimal Design of Hydrogen Supply Chain Considering Hydrogen Consumers' Travel Patterns and Energy Accessibility</p>
+                </div>
+
+                    <!-- 2021 -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900 flex items-center">
+                                Best Paper Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                                <span class="inline-flex items-center px-1 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-semibold ml-2">
+                                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Nov. 2021</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">The Society of Logistics Science and Technology</span></p>
+                        <p class="text-gray-700 text-sm">Development of an Optimization Model for Determining the Optimal Service Level of Micro-Fulfillment in Urban Areas</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 ">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">
+                                Honorable Mention Award
+                                <span class="tooltip-wrapper ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">
+                                        FA
+                                    </span>
+                                    <span class="tooltip-text">First Author</span>
+                                </span>
+                            </h4>
+                            <span class="text-sm font-medium text-gray-500">Nov. 2021</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="font-semibold text-gray-700">Paper Competition</span>, <span class="italic">The Society of Logistics Science and Technology</span></p>
+                        <p class="text-gray-700 text-sm">A Study on Dispatching Area Minimizing Last Mile Delivery Time</p>
+                    </div>
+                    </div>
+                </div>
+
+            <!-- Scholarships -->
+            <div>
+                <h3 class="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+                    <svg class="w-6 h-6 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                        </svg>
+                    Scholarships and Recognition
+                </h3>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">BK (Brain Korea) INSTAR Scholarships</h4>
+                            <span class="text-sm font-medium text-gray-500">2021 - 2025</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Inha University</span></p>
+                        <p class="text-gray-700 text-sm">Awarded to qualified graduate students, full-tuition, and stipend</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Award of Excellence</h4>
+                            <span class="text-sm font-medium text-gray-500">2021</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Incheon Metropolitan Council</span></p>
+                        <p class="text-gray-700 text-sm">Recognized for outstanding academic performance and exemplary conduct</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Digital Logistics Specialist Scholarship</h4>
+                            <span class="text-sm font-medium text-gray-500">2020</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Inha University</span></p>
+                        <p class="text-gray-700 text-sm">Awarded for outstanding academic achievement and specialization in digital logistics</p>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="text-lg font-bold text-gray-900">Leadership Scholarships</h4>
+                            <span class="text-sm font-medium text-gray-500">Fall 2016 - Fall 2019</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-2"><span class="italic">Inha University</span></p>
+                        <p class="text-gray-700 text-sm">Granted in recognition of service as President and Member of the Student Club Association</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Expertise Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">Technical Skills</h2>
+            
+            <!-- Programming Languages -->
+            <div class="mb-12">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-8 flex items-center">
+                        <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                        Programming
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Language -->
+                        <div class="py-3">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="w-1 h-6 bg-blue-500 rounded-full mr-3"></span>
+                                Language
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-200">Python</span>
+                                <span class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-200">C</span>
+                                <span class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-200">C++</span>
+                                <span class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-md text-sm font-medium border border-blue-200">Java</span>
+                            </div>
+                        </div>
+
+                        <!-- Statistics -->
+                        <div class="py-3">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="w-1 h-6 bg-green-500 rounded-full mr-3"></span>
+                                Statistics
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-green-50 text-green-700 rounded-md text-sm font-medium border border-green-200">STATA</span>
+                                <span class="px-3 py-1.5 bg-green-50 text-green-700 rounded-md text-sm font-medium border border-green-200">R</span>
+                            </div>
+                        </div>
+
+                        <!-- Database -->
+                        <div class="py-3">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="w-1 h-6 bg-purple-500 rounded-full mr-3"></span>
+                                Database
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-md text-sm font-medium border border-purple-200">SQL</span>
+                                <span class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-md text-sm font-medium border border-purple-200">PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <!-- GIS -->
+                        <div class="py-3">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="w-1 h-6 bg-orange-500 rounded-full mr-3"></span>
+                                GIS
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-orange-50 text-orange-700 rounded-md text-sm font-medium border border-orange-200">ArcGIS</span>
+                                <span class="px-3 py-1.5 bg-orange-50 text-orange-700 rounded-md text-sm font-medium border border-orange-200">QGIS</span>
+                            </div>
+                        </div>
+
+                        <!-- Optimization -->
+                        <div class="py-3 md:col-span-2">
+                            <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                <span class="w-1 h-6 bg-red-500 rounded-full mr-3"></span>
+                                Optimization
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 bg-red-50 text-red-700 rounded-md text-sm font-medium border border-red-200">Gurobi</span>
+                                <span class="px-3 py-1.5 bg-red-50 text-red-700 rounded-md text-sm font-medium border border-red-200">CPLEX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Methodology -->
+            <div class="mb-12">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+                        <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                        Research Methodology
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="inline-block bg-indigo-100 text-indigo-800 px-4 py-2 rounded-lg text-sm font-medium">Optimization</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 px-4 py-2 rounded-lg text-sm font-medium">Econometrics</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 px-4 py-2 rounded-lg text-sm font-medium">Text-mining</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 px-4 py-2 rounded-lg text-sm font-medium">Stated Preference Analysis</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 px-4 py-2 rounded-lg text-sm font-medium">Logit Model</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Interested in Collaboration?</h2>
+            <p class="text-xl mb-8 text-blue-100">
+                Feel free to reach out for research collaboration, academic discussions, or project inquiries.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="index.html#contact" class="inline-flex items-center px-8 py-3 border-2 border-white text-base font-medium rounded-md text-white hover:bg-white hover:text-blue-600 transition">
+                    Contact Me
+                </a>
+                <a href="HB_CV_basic_v3.pdf" class="inline-flex items-center px-8 py-3 bg-white text-base font-medium rounded-md text-blue-600 hover:bg-blue-50 transition">
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2025 HanByul Ryu. All rights reserved.</p>
+                <p class="mt-2 text-sm">Last updated: October 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

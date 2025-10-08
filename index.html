@@ -55,20 +55,61 @@
     </nav>
 
     <!-- Hero Section - Simplified -->
-    <section class="pt-32 pb-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">HanByul Ryu</h1>
-                <p class="text-xl text-gray-600 mb-8">
-                    Ph.D. Candidate in Logistics | Inha University
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-800 transition">
-                        Contact
-                    </a>
-                    <a href="HB_CV_basic_v3.pdf" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition">
-                        Download CV
-                    </a>
+    <section class="pt-44 pb-16 bg-white relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <img
+              id="hero"
+              src="./image/main (1).JPG"
+              alt="Background"
+              class="w-full h-full object-cover opacity-90 transform transition-all duration-1000 ease-in-out">
+          </div>
+          
+          <script>
+            const imgs = [
+              "./image/main (1).JPG","./image/main (2).JPG","./image/main (3).JPG","./image/main (4).JPG",
+            ];
+          
+            let i = 0;
+            const hero = document.getElementById("hero");
+          
+            setInterval(() => {
+              // 오른쪽으로 이동하며 페이드아웃
+              hero.style.transform = "translateX(30px)";
+              hero.style.opacity = 0.0;
+          
+              // 부드럽게 다음 이미지로 전환 (오른쪽→왼쪽)
+              setTimeout(() => {
+                i = (i + 1) % imgs.length;
+                hero.src = imgs[i];
+                hero.style.transform = "translateX(-30px)";
+                hero.style.opacity = 0.5;
+          
+                // 제자리로 돌아오면서 페이드인
+                setTimeout(() => {
+                  hero.style.transform = "translateX(0)";
+                  hero.style.opacity = 0.9;
+                }, 50);
+              }, 1000);
+            }, 5000);
+          </script>
+          
+        <!-- Content -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1 max-w-3xl">
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">HanByul Ryu</h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Ph.D. Candidate in Supply Chain Logistics <br> Inha University, South Korea
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-800 transition">
+                            Contact
+                        </a>
+                        <a href="HB_CV_basic_v3.pdf" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition">
+                            Download CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -79,9 +120,10 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-gray-900 mb-6">About</h2>
             <p class="text-gray-700 leading-relaxed text-lg mb-12 max-w-4xl">
-                HanByul Ryu is presently a Ph.D. student at Inha University, focusing on Digital Logistics, 
-                Data Analysis in Supply Chain Management, and Network Optimization. Her recent research 
-                centers on the demand analysis of parcel delivery and its supply chain optimization.
+                Hanbyul Ryu is currently a Ph.D. student at Inha University, focusing on Digital and Urban Logistics, 
+                Data Analytics in Supply Chain Management, and Network Optimization. <br> Her recent research examines 
+                parcel delivery demand patterns and assesses operational impacts through queuing-based simulation models, 
+                applying data-driven analytics to improve logistics efficiency and service performance.
             </p>
             
             <!-- Research Interests with Icons -->
@@ -132,6 +174,12 @@
                         <p class="text-sm text-gray-600">Analyzing large-scale logistics data</p>
                     </div>
                 </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="about.html" class="inline-flex items-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary bg-white hover:bg-primary hover:text-white transition">
+                    View More →
+                </a>
             </div>
         </div>
     </section>
