@@ -49,6 +49,51 @@
         .expand-icon.rotated {
             transform: rotate(180deg);
         }
+
+        /* Custom Tooltip */
+        .tooltip-wrapper {
+            position: relative;
+            display: inline-flex;
+        }
+        
+        .tooltip-wrapper .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            background-color: rgba(31, 41, 55, 0.95);
+            color: #fff;
+            text-align: center;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            
+            /* Position */
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            /* Arrow */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: opacity 0.1s, visibility 0.1s;
+        }
+        
+        .tooltip-wrapper .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(31, 41, 55, 0.95) transparent transparent transparent;
+        }
+        
+        .tooltip-wrapper:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-white">

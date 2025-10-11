@@ -89,7 +89,7 @@
     </section>
 
     <!-- Profile Section -->
-    <section class="py-16 bg-white">
+    <section id="biography-content" class="py-16 bg-white">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-3 gap-12 items-start">
                 <!-- Profile Image -->
@@ -105,7 +105,7 @@
                 <!-- Biography -->
                 <div class="md:col-span-2">
                     <h2 class="text-3xl font-bold text-gray-900 mb-6">Biography</h2>
-                    <div class="space-y-4 text-gray-700 leading-relaxed" id="biography-content">
+                    <div class="space-y-4 text-gray-700 leading-relaxed" id="biography-text">
                         <!-- Biography will be loaded from data-about.js -->
                     </div>
                 </div>
@@ -156,7 +156,7 @@
             });
 
             // Load biography content
-            const bioContainer = document.getElementById('biography-content');
+            const bioContainer = document.getElementById('biography-text');
             if (bioContainer && aboutData.biography) {
                 bioContainer.innerHTML = aboutData.biography.paragraphs.map(p => `<p>${p}</p>`).join('\n                        ');
             }

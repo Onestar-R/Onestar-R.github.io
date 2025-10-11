@@ -5,7 +5,7 @@
 // Render Thesis Section
 function renderThesis(thesis) {
     return `
-        <section class="py-12 bg-gray-50">
+        <section id="thesis" class="py-12 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
@@ -61,9 +61,16 @@ function renderPaper(paper) {
         return author.name;
     }).join(', ');
 
-    const tags = paper.tags.map(tag => 
-        `<span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">${tag}</span>`
-    ).join('\n                                ');
+    const tags = paper.tags.map(tag => {
+        if (tag === "KCI") {
+            return `
+                <span class="tooltip-wrapper">
+                    <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">${tag}</span>
+                    <span class="tooltip-text">Korea Citation Index</span>
+                </span>`;
+        }
+        return `<span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">${tag}</span>`;
+    }).join('\n                                ');
 
     return `
         <div class="bg-white rounded-lg shadow-md p-6 mb-4 ${borderClass} paper-card" onclick="toggleAbstract('${paper.id}')">
@@ -108,7 +115,7 @@ function renderJournalPapers(papers) {
     const papersHTML = papers.map(paper => renderPaper(paper)).join('\n');
     
     return `
-        <section class="py-12 bg-gray-50">
+        <section id="journal-papers" class="py-12 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
@@ -161,7 +168,7 @@ function renderWorkingPapers(papers) {
     }).join('\n        ');
 
     return `
-        <section class="py-12 bg-white">
+        <section id="working-papers" class="py-12 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
@@ -202,7 +209,7 @@ function renderInternationalConferences(conferences) {
     }).join('\n            ');
 
     return `
-        <section class="py-12 bg-white">
+        <section id="conference-presentations" class="py-12 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>

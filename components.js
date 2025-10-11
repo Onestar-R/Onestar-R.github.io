@@ -4,9 +4,34 @@
 const siteConfig = {
     siteName: "HanByul Ryu",
     navigation: [
-        { name: "About", href: "about.html" },
-        { name: "Research Projects", href: "research.html" },
-        { name: "Publications", href: "publications.html" },
+        { 
+            name: "About", 
+            href: "about.html",
+            submenu: [
+                { name: "Intro", href: "about.html#biography-content" },
+                { name: "Education", href: "about.html#education-container" },
+                { name: "Experiences", href: "about.html#experiences-container" },
+                { name: "Awards&Honors", href: "about.html#awards-container" },
+                { name: "Skills", href: "about.html#skills-container" }
+            ]
+        },
+        { 
+            name: "Research Projects", 
+            href: "research.html",
+            submenu: [
+                { name: "Projects", href: "research.html" }
+            ]
+        },
+        { 
+            name: "Publications", 
+            href: "publications.html",
+            submenu: [
+                { name: "Journal", href: "publications.html#journal-papers" },
+                { name: "Working", href: "publications.html#working-papers" },
+                { name: "Thesis", href: "publications.html#thesis" },
+                { name: "Presentations", href: "publications.html#conference-presentations" }
+            ]
+        },
         { name: "Contact", href: "index.html#contact" }
     ],
     contact: {
@@ -27,10 +52,53 @@ function createNavigation(currentPage = '') {
     const nav = document.createElement('nav');
     nav.className = 'bg-white border-b border-gray-200 fixed w-full top-0 z-50';
     
-    const navItems = siteConfig.navigation.map(item => {
+    const navItems = siteConfig.navigation.map((item, index) => {
         const isActive = item.href.includes(currentPage) && currentPage !== '';
         const activeClass = isActive ? 'text-primary font-semibold' : 'text-gray-600 hover:text-primary';
-        return `<a href="${item.href}" class="${activeClass} px-3 py-2 text-sm font-medium transition">${item.name}</a>`;
+        
+        if (item.submenu && item.submenu.length > 0) {
+            const submenuItems = item.submenu.map(subitem => 
+                `<a href="${subitem.href}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition">${subitem.name}</a>`
+            ).join('');
+            
+            return `
+                <div class="relative dropdown-wrapper">
+                    <button class="${activeClass} px-3 py-2 text-sm font-medium transition inline-flex items-center">
+                        ${item.name}
+                        <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden">
+                        <div class="py-1">
+                            ${submenuItems}
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            return `<a href="${item.href}" class="${activeClass} px-3 py-2 text-sm font-medium transition">${item.name}</a>`;
+        }
+    }).join('');
+    
+    const mobileNavItems = siteConfig.navigation.map(item => {
+        const isActive = item.href.includes(currentPage) && currentPage !== '';
+        const activeClass = isActive ? 'bg-blue-50 text-primary font-semibold' : 'text-gray-600 hover:bg-gray-50 hover:text-primary';
+        
+        if (item.submenu && item.submenu.length > 0) {
+            const submenuItems = item.submenu.map(subitem => 
+                `<a href="${subitem.href}" class="block pl-8 pr-3 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-primary">${subitem.name}</a>`
+            ).join('');
+            
+            return `
+                <div>
+                    <a href="${item.href}" class="${activeClass} block px-3 py-2 rounded-md text-base font-medium">${item.name}</a>
+                    ${submenuItems}
+                </div>
+            `;
+        } else {
+            return `<a href="${item.href}" class="${activeClass} block px-3 py-2 rounded-md text-base font-medium">${item.name}</a>`;
+        }
     }).join('');
     
     nav.innerHTML = `
@@ -44,6 +112,22 @@ function createNavigation(currentPage = '') {
                         ${navItems}
                     </div>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition">
+                        <span class="sr-only">메뉴 열기</span>
+                        <!-- Hamburger icon -->
+                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+                ${mobileNavItems}
             </div>
         </div>
     `;
@@ -138,17 +222,118 @@ function addCommonStyles() {
 }
 
 function addSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // 모든 링크 클릭 시 처리
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            
+            // 해시 부분 추출
+            const hashIndex = href.indexOf('#');
+            if (hashIndex === -1) return;
+            
+            const path = href.substring(0, hashIndex);
+            const hash = href.substring(hashIndex);
+            
+            // 같은 페이지 내의 링크인 경우
+            const currentPage = window.location.pathname.split('/').pop();
+            const targetPage = path.split('/').pop();
+            
+            if (!path || path === '' || targetPage === currentPage) {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if (target) {
+                    scrollToTarget(target);
+                }
+            }
+            // 다른 페이지로의 링크는 그대로 진행 (브라우저가 처리)
+        });
+    });
+    
+    // 페이지 로드 시 해시가 있으면 해당 위치로 스크롤
+    if (window.location.hash) {
+        setTimeout(function() {
+            const target = document.querySelector(window.location.hash);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                scrollToTarget(target);
+            }
+        }, 100);
+    }
+}
+
+function scrollToTarget(target) {
+    const navHeight = 64; // 네비게이션 바 높이 (h-16 = 64px)
+    const offset = 0; // 추가 여유 공간 (섹션 시작 전 여백)
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - offset;
+    
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+    });
+}
+
+function initializeMobileMenu() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (menuButton && mobileMenu) {
+        menuButton.addEventListener('click', function() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
             }
         });
+        
+        // 모바일 메뉴의 링크를 클릭하면 메뉴 닫기
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+}
+
+function initializeDropdownMenus() {
+    const dropdownWrappers = document.querySelectorAll('.dropdown-wrapper');
+    
+    dropdownWrappers.forEach(wrapper => {
+        const button = wrapper.querySelector('button');
+        const menu = wrapper.querySelector('.dropdown-menu');
+        let hideTimeout;
+        
+        if (button && menu) {
+            // 마우스 오버 시 메뉴 표시
+            wrapper.addEventListener('mouseenter', function() {
+                // 숨기기 타이머가 있으면 취소
+                if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                }
+                menu.classList.remove('hidden');
+            });
+            
+            // 마우스 아웃 시 메뉴 숨기기 (지연 시간 추가)
+            wrapper.addEventListener('mouseleave', function() {
+                // 300ms 후에 메뉴 숨기기
+                hideTimeout = setTimeout(function() {
+                    menu.classList.add('hidden');
+                }, 300);
+            });
+            
+            // 버튼 클릭 시 해당 페이지로 이동 (페이지 맨 위로)
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const buttonText = button.textContent.trim();
+                const parentItem = siteConfig.navigation.find(item => {
+                    return buttonText.includes(item.name);
+                });
+                if (parentItem) {
+                    window.location.href = parentItem.href;
+                }
+            });
+        }
     });
 }
 
@@ -190,4 +375,10 @@ function initializeComponents(options = {}) {
     
     // Smooth Scroll 적용
     setTimeout(addSmoothScroll, 100);
+    
+    // 모바일 메뉴 초기화
+    setTimeout(initializeMobileMenu, 100);
+    
+    // 드롭다운 메뉴 초기화
+    setTimeout(initializeDropdownMenus, 100);
 }

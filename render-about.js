@@ -63,7 +63,7 @@ function renderEducation(educationList) {
     }).join('\n            ');
     
     return `
-        <section class="py-16 bg-gray-50">
+        <section id="education-container" class="py-16 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-12 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
@@ -169,7 +169,7 @@ function renderExperiences(experiences) {
     const experiencesHTML = allExperiences.map(exp => renderExperienceCard(exp)).join('\n            ');
     
     return `
-        <section class="py-16 bg-white">
+        <section id="experiences-container" class="py-16 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-12 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
@@ -239,7 +239,7 @@ function renderAwards(awards) {
     }).join('\n\n');
 
     return `
-        <section class="py-16 bg-gray-50">
+        <section id="awards-container" class="py-16 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-12 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
@@ -303,7 +303,7 @@ function renderTechnicalSkills(skills) {
     ).join('\n                    ');
 
     return `
-        <section class="py-16 bg-white">
+        <section id="skills-container" class="py-16 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-gray-900 mb-12 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
