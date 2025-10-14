@@ -27,7 +27,6 @@ const siteConfig = {
             href: "publications.html",
             submenu: [
                 { name: "Journal", href: "publications.html#journal-papers" },
-                { name: "Working", href: "publications.html#working-papers" },
                 { name: "Thesis", href: "publications.html#thesis" },
                 { name: "Presentations", href: "publications.html#conference-presentations" }
             ]

@@ -6,7 +6,7 @@ const aboutData = {
     // Biography
     biography: {
         paragraphs: [
-            "Hanbyul Ryu is currently a Ph.D. student at Graduate School of Logistics at Inha University, focusing on Digital and Urban Logistics, Data Analytics in Supply Chain Management, and Network Optimization.",
+            "Hanbyul Ryu is currently a researcher at Graduate School of Logistics at Inha University, focusing on Digital and Urban Logistics, Data Analytics in Supply Chain Management, and Network Optimization.",
             "Her primary research interest lies in practical optimization models that incorporate individual behaviors, environmental considerations, and real-world constraints such as human factors. To this end, she examines personal preferences, utility functions, and environmental costs, integrating them into optimization frameworks to better capture decision-making processes in logistics systems.",
             "Her recent research analyzes parcel delivery demand patterns and evaluates the impacts of service operations using queuing-based simulation models, applying data-driven analytical approaches to enhance supply chain efficiency and logistics performance."
         ]
@@ -15,11 +15,10 @@ const aboutData = {
     // Education
     education: [
         {
-            degree: "Ph.D. Candidate in Logistics",
+            degree: "Researcher",
             institution: "Graduate School of Logistics, Inha University, Incheon, South Korea",
             date: "Feb. 2023 - Present",
-            isCurrent: true,
-            focus: "Digital Logistics, Supply Chain Optimization, Network Analysis"
+            isCurrent: true
         },
         {
             degree: "Master of Science in Logistics",
@@ -135,6 +134,14 @@ const aboutData = {
                         ]
                     }
                 ]
+            },
+            {
+                category: "EXTRACURRICULAR",
+                categoryColor: "purple",
+                title: "English as a Second Language Program",
+                institution: "University of Regina, Regina, Canada",
+                date: "Jun. 2017 - Jul. 2017",
+                activities: []
             }
         ]
     },
@@ -206,14 +213,14 @@ const aboutData = {
                 badges: ["FA", "star"]
             },
             {
-                title: "Outstanding Paper Award",
+                title: "Best Paper Award",
                 organization: "<span class=\"font-semibold text-gray-700\">Paper Competition</span>, <span class=\"italic\">The Korea Logistics Research Association</span>",
                 month: "Dec. 2022",
                 paper: "Market analysis of container ships considering supply chain risks: Ocean freight rate forecast using panel data",
                 badges: []
             },
             {
-                title: "Best Paper Award",
+                title: "Outstanding Paper Award",
                 organization: "<span class=\"font-semibold text-gray-700\">Paper Competition</span>, <span class=\"italic\">The Korean Production and Operations Management Society</span>",
                 month: "Nov. 2022",
                 paper: "Risks in Parts Supply Chain and Their Impact on Supply Chains and Shipping Sector: Focusing on Automobile Industry",
@@ -297,6 +304,6 @@ const aboutData = {
             gis: ["ArcGIS", "QGIS"],
             optimization: ["Gurobi", "CPLEX"]
         },
-        researchMethodology: ["Optimization", "Econometrics", "Text-mining", "Stated Preference Analysis", "Logit Model"]
+        researchMethodology: ["Optimization", "Discrete Choice Model", "Econometrics", "Text-mining", "Growth Modeling", "Traffic Flow Analysis", "Simulation"]
     }
 };

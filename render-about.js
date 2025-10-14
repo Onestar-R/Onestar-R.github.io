@@ -222,7 +222,7 @@ function renderAwards(awards) {
                             <span class="text-sm font-medium text-gray-500">${award.month}</span>
                         </div>
                         <p class="text-gray-600 text-sm mb-2">${award.organization}</p>
-                        <p class="text-gray-700 text-sm">${award.paper}</p>
+                        <p class="text-gray-700 text-sm"><span class="font-semibold">Title:</span> ${award.paper}</p>
                     </div>`;
     }).join('\n\n');
 

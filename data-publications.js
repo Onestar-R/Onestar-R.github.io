@@ -213,21 +213,6 @@ const publicationsData = {
         }
     ],
 
-    // Working Papers
-    workingPapers: [
-        {
-            id: "wp1",
-            title: "Analysis on Technology Trends in Logistics Industry by Patent Analytics and Text Mining",
-            authors: [
-                { name: "Hanbyul RYU", isFirstAuthor: true },
-                { name: "Chaehwan LIM", isFirstAuthor: false },
-                { name: "Daisik NAM", isFirstAuthor: false },
-                { name: "Hun-Koo HA", isFirstAuthor: false }
-            ],
-            description: "Investigate the current status of new technologies in logistics industry and forecast future trends based on logistics-related patent and papers"
-        }
-    ],
-
     // International Conference Presentations
     internationalConferences: [
         {

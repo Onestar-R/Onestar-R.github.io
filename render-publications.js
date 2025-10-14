@@ -5,7 +5,7 @@
 // Render Thesis Section
 function renderThesis(thesis) {
     return `
-        <section id="thesis" class="py-12 bg-gray-50">
+        <section id="thesis" class="py-12 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
@@ -55,7 +55,9 @@ function renderPaper(paper) {
     const borderClass = paper.firstAuthor ? 'border-l-4 border-primary' : '';
     
     const authors = paper.authors.map(author => {
-        if (author.isFirstAuthor) {
+        // HanByul Ryu 이름을 파랑색으로 강조 (대소문자 구분 없이)
+        const nameLower = author.name.toLowerCase();
+        if (nameLower.includes('hanbyul ryu')) {
             return `<span class="font-semibold text-primary">${author.name}</span>`;
         }
         return author.name;
@@ -142,49 +144,13 @@ function renderConferencePapers(papers) {
     `;
 }
 
-// Render Working Papers Section
-function renderWorkingPapers(papers) {
-    const papersHTML = papers.map(paper => {
-        const authors = paper.authors.map(author => {
-            if (author.isFirstAuthor) {
-                return `<span class="font-semibold text-primary">${author.name}</span>`;
-            }
-            return author.name;
-        }).join(', ');
-
-        return `
-            <div class="bg-white rounded-lg shadow-md p-6 mb-4">
-                <h3 class="text-xl font-semibold text-gray-900 mb-3">
-                    ${paper.title}
-                </h3>
-                <p class="text-gray-700 mb-3">
-                    ${authors}
-                </p>
-                <p class="text-gray-700 leading-relaxed italic">
-                    ${paper.description}
-                </p>
-            </div>
-        `;
-    }).join('\n        ');
-
-    return `
-        <section id="working-papers" class="py-12 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="w-2 h-8 bg-primary mr-3"></span>
-                    Working Papers
-                </h2>
-                ${papersHTML}
-            </div>
-        </section>
-    `;
-}
-
 // Render International Conference Presentations
 function renderInternationalConferences(conferences) {
     const conferencesHTML = conferences.map(conf => {
         const authors = conf.authors.map(author => {
-            if (author.isFirstAuthor) {
+            // HanByul Ryu 이름을 파랑색으로 강조 (대소문자 구분 없이)
+            const nameLower = author.name.toLowerCase();
+            if (nameLower.includes('hanbyul ryu')) {
                 return `<span class="font-semibold text-primary">${author.name}</span>`;
             }
             return author.name;
@@ -209,7 +175,7 @@ function renderInternationalConferences(conferences) {
     }).join('\n            ');
 
     return `
-        <section id="conference-presentations" class="py-12 bg-white">
+        <section id="conference-presentations" class="py-12 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <span class="w-2 h-8 bg-primary mr-3"></span>
@@ -224,7 +190,7 @@ function renderInternationalConferences(conferences) {
 // Render Research Focus Section
 function renderResearchFocus() {
     return `
-        <section class="py-12 bg-gray-50">
+        <section class="py-12 bg-white">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="bg-blue-50 border-l-4 border-primary p-6 rounded-r-lg">
                     <h3 class="text-lg font-semibold text-gray-900 mb-3">Research Focus Areas</h3>
@@ -253,9 +219,8 @@ function initializePublications() {
     // Render all sections
     const thesisHTML = renderThesis(publicationsData.thesis);
     const journalHTML = renderJournalPapers(publicationsData.journalPapers);
-    const workingHTML = renderWorkingPapers(publicationsData.workingPapers);
     const intlConfHTML = renderInternationalConferences(publicationsData.internationalConferences);
     const researchFocusHTML = renderResearchFocus();
 
-    container.innerHTML = journalHTML + workingHTML + thesisHTML + intlConfHTML + researchFocusHTML;
+    container.innerHTML = journalHTML + thesisHTML + intlConfHTML + researchFocusHTML;
 }
