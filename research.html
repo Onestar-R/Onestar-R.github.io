@@ -32,10 +32,6 @@
             transition: max-height 0.5s ease-in;
         }
         
-        .project-card {
-            cursor: pointer;
-        }
-        
         .expand-icon {
             transition: transform 0.3s ease;
         }
@@ -44,47 +40,46 @@
             transform: rotate(180deg);
         }
 
-        /* Add spacing between project cards */
-        #research-container > div {
-            margin-bottom: 1.5rem;
-        }
+        /* Remove divider between projects */
     </style>
 </head>
 <body class="bg-white">
     <!-- Navigation will be inserted here by components.js -->
 
     <!-- Header -->
-    <section class="pt-32 pb-12 bg-white">
+    <section class="pt-24 pb-6 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <a href="index.html" class="inline-flex items-center text-primary hover:underline mb-6">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="index.html" class="inline-flex items-center text-primary hover:underline mb-4 text-sm">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
                 Back to Home
             </a>
-            <h1 class="text-4xl font-bold text-gray-900 mb-4">Research Projects</h1>
-            <p class="text-lg text-gray-600">
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Research Projects</h1>
+            <p class="text-sm text-gray-600">
                 Detailed overview of current and past research initiatives
             </p>
         </div>
     </section>
 
     <!-- Research Projects Content -->
-    <section class="py-12 bg-gray-50">
+    <section class="py-6 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Divider line -->
+            <div class="border-t border-gray-200 mb-6"></div>
             <!-- Projects will be dynamically loaded here -->
-            <div id="research-container"></div>
+            <div id="research-container" class="bg-white"></div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="py-16 bg-white">
+    <section class="py-10 bg-gray-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Interested in Collaboration?</h2>
-            <p class="text-gray-600 mb-8">
+            <h2 class="text-xl font-bold text-gray-900 mb-2">Interested in Collaboration?</h2>
+            <p class="text-sm text-gray-600 mb-6">
                 I'm always open to research collaborations and discussions about logistics optimization.
             </p>
-            <a href="index.html#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-blue-800 transition">
+            <a href="index.html#contact" class="inline-flex items-center px-5 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-blue-800 transition">
                 Get in Touch
             </a>
         </div>

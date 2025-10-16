@@ -15,7 +15,7 @@ const aboutData = {
     // Education
     education: [
         {
-            degree: "Researcher",
+            degree: "Ph.D. Candidate in Supply Chain Logistics",
             institution: "Graduate School of Logistics, Inha University, Incheon, South Korea",
             date: "Feb. 2023 - Present",
             isCurrent: true
@@ -65,13 +65,13 @@ const aboutData = {
                 entries: [
                     {
                         institution: "Inha University, Incheon, South Korea",
-                        date: "Fall 2024",
-                        courses: ["Introduction to Computer Programming"]
+                        date: "2024",
+                        courses: ["Introduction to Computer Programming (Fall 2024)"]
                     },
                     {
                         institution: "Incheon National University, Incheon, South Korea",
-                        date: "Spring 2024",
-                        courses: ["Urban Data Mining"]
+                        date: "2024",
+                        courses: ["Urban Data Mining (Spring 2024)"]
                     }
                 ]
             },
