@@ -6,9 +6,9 @@ const aboutData = {
     // Biography
     biography: {
         paragraphs: [
-            "Hanbyul Ryu is currently a researcher at Graduate School of Logistics at Inha University, focusing on Digital and Urban Logistics, Data Analytics in Supply Chain Management, and Network Optimization.",
-            "Her primary research interest lies in practical optimization models that incorporate individual behaviors, environmental considerations, and real-world constraints such as human factors. To this end, she examines personal preferences, utility functions, and environmental costs, integrating them into optimization frameworks to better capture decision-making processes in logistics systems.",
-            "Her recent research analyzes parcel delivery demand patterns and evaluates the impacts of service operations using queuing-based simulation models, applying data-driven analytical approaches to enhance supply chain efficiency and logistics performance."
+            "I am currently pursuing a Ph.D. in Supply Chain Management, with research interests in digital logistics, behavioral analytics, operations research, and data-driven decision-making in logistics and transportation systems. I hold both a Bachelor’s and a Master’s degree in Logistics from Inha University, South Korea.",
+            "During my graduate studies, I explored how behavioral analytics and optimization can enhance the efficiency and fairness of logistics operations. My work includes studies on last-mile delivery optimization, demand forecasting, and behavioral modeling of logistics service users.  I have also participated in several government- and industry-funded projects—such as hydrogen supply chain optimization, digital logistics demonstration design and analysis, and preference modeling for underground logistics services—bridging theoretical modeling with real-world applications. ",
+            "My recent research extends to applying generative models in logistics decision environments. I have presented my work at major international conferences, including the INFORMS Annual Meeting and the TRB Annual Meeting. Methodologically, I employ econometric modeling, discrete choice analysis, and optimization approaches to address emerging challenges in digital and urban logistics systems."
         ]
     },
 
